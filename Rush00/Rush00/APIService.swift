@@ -64,6 +64,30 @@ class APIService {
         }
         task.resume()
     }
+    
+    func getMessages(topicId: Int, success: ((NSArray)->Void)?) {
+        let string = "https://api.intra.42.fr/v2/topics/\(topicId)/messages"
+        let url = URL(string: "https://api.intra.42.fr/v2/topics/\(topicId)/messages")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            if let err = error {
+                print(err)
+            } else if let d = data {
+                do {
+                    if let topicArray: NSArray = try JSONSerialization.jsonObject(with: d, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray {
+                        success?(topicArray)
+                    }
+                } catch (let err) {
+                    print(err)
+                }
+            }
+        }
+        task.resume()
+    }
 }
 
 extension APIService {

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rush00/TopicsViewController.swift"
+            timestampString = "576268204.436132"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rush00/MessagesViewController.swift"
+            timestampString = "576268684.228291"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rush00.MessagesViewController.__deallocating_deinit"
+                  moduleName = "Rush00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/averemii/swift_piscine/old/forum/Rush00/Rush00/MessagesViewController.swift"
+                  timestampString = "576268685.215374"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rush00.MessagesViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Rush00.MessagesViewController"
+                  moduleName = "Rush00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/averemii/swift_piscine/old/forum/Rush00/Rush00/MessagesViewController.swift"
+                  timestampString = "576268685.217006"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rush00.MessagesViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Rush00.MessagesViewController"
+                  moduleName = "Rush00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/averemii/swift_piscine/old/forum/Rush00/Rush00/MessagesViewController.swift"
+                  timestampString = "576268685.218609"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rush00.MessagesViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Rush00.MessagesViewController&gt;"
+                  moduleName = "Rush00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/averemii/swift_piscine/old/forum/Rush00/Rush00/MessagesViewController.swift"
+                  timestampString = "576268685.2211241"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rush00.MessagesViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Rush00.MessagesViewController&gt;"
+                  moduleName = "Rush00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/averemii/swift_piscine/old/forum/Rush00/Rush00/MessagesViewController.swift"
+                  timestampString = "576268685.222858"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

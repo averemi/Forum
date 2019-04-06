@@ -12,6 +12,7 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tableView: UITableView!
     var topics: [Topics] = []
+    var selectedTopic: Topics? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,12 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if let dateCreated = topicArr["created_at"] as? String {
                     topic.createdAt = dateCreated.components(separatedBy: "T").first!
                 }
+                if let messageUrlString = topicArr["messages_url"] as? String {
+                    topic.messageUrlString = messageUrlString
+                }
+                if let id = topicArr["id"] as? Int {
+                    topic.topicId = id
+                }
                 
                 self.topics.append(topic)
             }
@@ -56,6 +63,14 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationController?.navigationBar.isHidden = true
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120.0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToMessages" {
+            guard let newViewController = segue.destination as? MessagesViewController else { return }
+            
+            newViewController.selectedTopic = selectedTopic
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,7 +88,8 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //     performSegue(withIdentifier: "", sender: self)
+        selectedTopic = topics[indexPath.row]
+        performSegue(withIdentifier: "goToMessages", sender: self)
     }
 
 }

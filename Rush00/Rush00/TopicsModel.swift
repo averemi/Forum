@@ -11,12 +11,16 @@ class Topics {
     var createdAt: String = ""
     var title: String = ""
     var content: String = ""
+    var messageUrlString: String = ""
+    var topicId: Int = 0
     
-    init(author: String, createdAt: String, title: String, content: String) {
+    init(author: String, createdAt: String, title: String, content: String, messageUrlString: String, topicId: Int) {
         self.author = author
         self.createdAt = createdAt
         self.title = title
         self.content = content
+        self.messageUrlString = messageUrlString
+        self.topicId = topicId
     }
     
     init() {
