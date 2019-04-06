@@ -298,17 +298,17 @@
                     <connections>
                         <outlet property="tableView" destination="nKq-qk-xdH" id="g6a-QS-DB1"/>
                         <outlet property="titleLabel" destination="sdG-zb-Hj4" id="kjL-Lf-cPE"/>
-                        <segue destination="JO9-Uk-4HH" kind="show" identifier="goToResponces" id="DQT-kt-3Or"/>
+                        <segue destination="JO9-Uk-4HH" kind="show" identifier="goToResponses" id="DQT-kt-3Or"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVu-iQ-O7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2364" y="-713.79310344827593"/>
         </scene>
-        <!--View Controller-->
+        <!--Response View Controller-->
         <scene sceneID="YcF-Qc-yzG">
             <objects>
-                <viewController id="JO9-Uk-4HH" sceneMemberID="viewController">
+                <viewController id="JO9-Uk-4HH" customClass="ResponseViewController" customModule="Rush00" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tcx-6d-ubm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

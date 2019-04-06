@@ -11,6 +11,7 @@ import UIKit
 class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var selectedTopic: Topics? = nil
+    var selectedMessage: Messages? = nil
     var messages: [Messages] = []
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -36,11 +37,19 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
                 if let content = messageArr["content"] as? String {
                     message.content = content
                 }
+                if let dateCreated = messageArr["created_at"] as? String {
+                    message.date = dateCreated.components(separatedBy: "T").first!
+                }
+                if let id = messageArr["id"] as? Int {
+                    message.id = id
+                }
                 self.messages.append(message)
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        }, failure: { error in
+            print(error)
         })
     }
     
@@ -49,6 +58,14 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.estimatedRowHeight = 120.0
         titleLabel.text = selectedTopic?.title
         self.tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResponses" {
+            guard let newViewController = segue.destination as? ResponseViewController else { return }
+            
+            newViewController.selectedMessage = selectedMessage
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -64,6 +81,14 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         cell.configure(message: messages[indexPath.row])
  
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+     //   guard indexPath.row !=  else { return }
+
+        selectedMessage = messages[indexPath.row]
+        performSegue(withIdentifier: "goToResponses", sender: self)
     }
 
 }

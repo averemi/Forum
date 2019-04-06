@@ -17,9 +17,16 @@ class StartViewController: UIViewController {
     
     @IBAction func viewTopicsPressed(_ sender: UIButton) {
         APIService.shared.getAccessToken(success: { (isSuccess) in
+            APIService.shared.getUserInfo(success: { (isSuccess) in
+                print(APIService.shared.userId)
+            }, failure:  { error in
+                print(error)
+            })
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "goToTopics", sender: self)
             }
+        }, failure: { error in
+            print(error)
         })
     }
 }

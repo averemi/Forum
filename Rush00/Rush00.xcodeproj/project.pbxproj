@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20DBCE7F225912A7006DD689 /* DetailedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE7E225912A7006DD689 /* DetailedInfoViewController.swift */; };
 		20DBCE81225915A0006DD689 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE80225915A0006DD689 /* MessageTableViewCell.swift */; };
+		20DBCE8322592BC7006DD689 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE8222592BC7006DD689 /* ResponseViewController.swift */; };
+		20DBCE8522592C03006DD689 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE8422592C03006DD689 /* ResponseModel.swift */; };
+		20DBCE87225933F9006DD689 /* ResponseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE86225933F9006DD689 /* ResponseTableViewCell.swift */; };
 		20EBF7BB2258D08D00700E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EBF7BA2258D08D00700E0B /* AppDelegate.swift */; };
 		20EBF7BD2258D08D00700E0B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EBF7BC2258D08D00700E0B /* StartViewController.swift */; };
 		20EBF7C02258D08D00700E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20EBF7BE2258D08D00700E0B /* Main.storyboard */; };
@@ -25,8 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20DBCE7E225912A7006DD689 /* DetailedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedInfoViewController.swift; sourceTree = "<group>"; };
 		20DBCE80225915A0006DD689 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		20DBCE8222592BC7006DD689 /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
+		20DBCE8422592C03006DD689 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		20DBCE86225933F9006DD689 /* ResponseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTableViewCell.swift; sourceTree = "<group>"; };
 		20EBF7B72258D08D00700E0B /* Rush00.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rush00.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EBF7BA2258D08D00700E0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20EBF7BC2258D08D00700E0B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -88,8 +92,10 @@
 				20EBF7D62258D92100700E0B /* MessagesModel.swift */,
 				20EBF7D82258D93C00700E0B /* Constants.swift */,
 				20EBF7DA2258D99B00700E0B /* APIService.swift */,
-				20DBCE7E225912A7006DD689 /* DetailedInfoViewController.swift */,
 				20DBCE80225915A0006DD689 /* MessageTableViewCell.swift */,
+				20DBCE8222592BC7006DD689 /* ResponseViewController.swift */,
+				20DBCE8422592C03006DD689 /* ResponseModel.swift */,
+				20DBCE86225933F9006DD689 /* ResponseTableViewCell.swift */,
 			);
 			path = Rush00;
 			sourceTree = "<group>";
@@ -168,13 +174,15 @@
 			files = (
 				20EBF7BD2258D08D00700E0B /* StartViewController.swift in Sources */,
 				20EBF7BB2258D08D00700E0B /* AppDelegate.swift in Sources */,
-				20DBCE7F225912A7006DD689 /* DetailedInfoViewController.swift in Sources */,
 				20EBF7CF2258D6D700700E0B /* MessagesViewController.swift in Sources */,
+				20DBCE8522592C03006DD689 /* ResponseModel.swift in Sources */,
 				20EBF7D32258D8DE00700E0B /* TopicsTableViewCell.swift in Sources */,
 				20DBCE81225915A0006DD689 /* MessageTableViewCell.swift in Sources */,
 				20EBF7D52258D90800700E0B /* TopicsModel.swift in Sources */,
 				20EBF7D12258D6E200700E0B /* TopicsViewController.swift in Sources */,
 				20EBF7DB2258D99B00700E0B /* APIService.swift in Sources */,
+				20DBCE87225933F9006DD689 /* ResponseTableViewCell.swift in Sources */,
+				20DBCE8322592BC7006DD689 /* ResponseViewController.swift in Sources */,
 				20EBF7CD2258D66500700E0B /* LogInViewController.swift in Sources */,
 				20EBF7D72258D92100700E0B /* MessagesModel.swift in Sources */,
 				20EBF7D92258D93C00700E0B /* Constants.swift in Sources */,
