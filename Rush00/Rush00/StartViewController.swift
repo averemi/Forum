@@ -22,6 +22,7 @@ class StartViewController: UIViewController {
             }, failure:  { error in
                 print(error)
             })
+            APIService.shared.isLoggedIn = true
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "goToTopics", sender: self)
             }

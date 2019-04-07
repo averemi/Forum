@@ -69,7 +69,7 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToMessages" {
-            guard let newViewController = segue.destination as? MessagesViewController else { return }
+       /*     guard let newViewController = segue.destination as? MessagesViewController else { return }
             
             newViewController.selectedTopic = selectedTopic
             APIService.shared.createTopic(content: "Content Hello", title: "Title Hello", success: { (isSuccess) in
@@ -77,6 +77,8 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }, failure: { error in
                     print(error)
             })
+        }*/
+            APIService.shared.isLoggedIn = false
         }
     }
     

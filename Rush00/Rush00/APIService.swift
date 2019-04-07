@@ -12,6 +12,7 @@ class APIService {
     var userCode: String = ""
     var accessToken: String = ""
     var userId: Int = 0
+    var isLoggedIn = false
     
     func getAccessToken(success: ((Bool)->Void)?, failure: ((String)->Void)?) {
         

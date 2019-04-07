@@ -15,6 +15,7 @@ class LogInViewController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkLogInStatus()
         showAuthPage()
     }
     
@@ -26,5 +27,15 @@ class LogInViewController: UIViewController, UIWebViewDelegate {
         webView.loadRequest(requestObj)
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
+    }
+    
+    func checkLogInStatus() {
+        if !APIService.shared.isLoggedIn {
+            let cookieJar = HTTPCookieStorage.shared
+            
+            for cookie in cookieJar.cookies! {
+                cookieJar.deleteCookie(cookie)
+            }
+        }
     }
 }
