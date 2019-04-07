@@ -96,5 +96,10 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
             print(error)
         })
     }
+    
+    @IBAction func addMessage(_ sender: UIButton) {
+        
+    }
+    
 
 }
