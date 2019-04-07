@@ -11,6 +11,8 @@ import UIKit
 class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    
     var topics: [Topics] = []
     var selectedTopic: Topics? = nil
     
@@ -102,6 +104,10 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         selectedTopic = topics[indexPath.row]
         performSegue(withIdentifier: "goToMessages", sender: self)
     }
-
+    
+    
+    @IBAction func logOut(_ sender: UIButton) {
+    }
+    
 }
 
