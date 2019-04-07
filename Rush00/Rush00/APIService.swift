@@ -12,7 +12,9 @@ class APIService {
     var userCode: String = ""
     var accessToken: String = ""
     var userId: Int = 0
-    var isLoggedIn = false
+    var isLoggedIn = true // CHANGE TO FALSE
+    
+    ///// NOT FORGET TO CHANGE ISLOGGEDIN TO FALSE
     
     func getAccessToken(success: ((Bool)->Void)?, failure: ((String)->Void)?) {
         
@@ -112,14 +114,29 @@ class APIService {
     }
     
     func createTopic(content: String, title: String, success: ((Bool)->Void)?, failure: ((String)->Void)?) {
-        let url = URL(string: "https://api.intra.42.fr/v2/topics/")
+        let url = URL(string: "https://api.intra.42.fr/v2/topics.json")
+        let json = [
+            "topic": [
+                "author_id": "\(userId)",
+                "cursus_ids": ["1"],
+                "kind": "normal",
+                "messages_attributes": [
+                    [
+                        "content": content,
+                        ],
+                ],
+                "name": title,
+                "tag_ids": ["574"],
+            ],
+        ]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
         var request = URLRequest(url: url!)
         
         request.httpMethod = "POST"
         request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
-     //   request.httpBody = "{\"topic\":{\"kind\":\"normal\",\"name\":\"\(title)\",\"language_id\":\"3\",\"tag_ids\":[\"200\"],\"messages_attributes\":[{\"content\":\"\(content)\",\"author_id\":\"\(userId)\"}]}}".data(using: String.Encoding.utf8) /// TODO: Encode to JSON
-    //    request.httpBody = "{\"topic\":{\"cursus_ids\":[\"1\"],\"kind\":\"normal\",\"language_id\":\"1\",\"name\":\"\(title)\",\"tag_ids\":[\"574\"],\"messages_attributes\":[{\"content\":\"\(content)\",\"author_id\":\"\(userId)\"}]}}".data(using: String.Encoding.utf8)
-        request.httpBody = "{\"topic\":{\"author_id\":\"94\",\"cursus_ids\":[\"1\"],\"kind\":\"normal\",\"language_id\":\"3\",\"messages_attributes\":[{\"author_id\":\"21\",\"content\":\"Hello world\",\"messageable_id\":\"1\",\"messageable_type\":\"Topic\"}],\"name\":\"The daily unicorn #837 🦄\",\"tag_ids\":[\"9\",\"7\",\"8\"],\"survey_attributes\":{\"name\":\"Who belongs with Geralt ?\",\"survey_answers_attributes\":[{\"name\":\"Yennefer\"},{\"name\":\"Triss\"},{\"name\":\"Roach\"}]}}}".data(using: String.Encoding.utf8)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        request.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
@@ -154,6 +171,51 @@ class APIService {
                 } catch (let error) {
                     failure?(error.localizedDescription)
                 }
+            }
+        }
+        task.resume()
+    }
+    
+    func addMessage(message: String, topicId: Int, success: ((Bool)->Void)?, failure: ((String)->Void)?){
+        // prepare json data
+     //   let json = ["topic_id": "\(topicId)", "message": ["author_id":"\(userId)", "content":"Hello world", "messageable_id": "7", "messageable_type":"Topic"]]
+        let json = [
+            "topic": [
+                "author_id": nil,
+                "cursus_ids": ["1"],
+                "kind": "normal",
+                "messages_attributes": [
+                    [
+                        "content": message,
+                        ],
+                ],
+                "name": "Hello",
+                "tag_ids": ["574"],
+            ],
+        ]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+
+     //   let url = URL(string: "https://api.intra.42.fr/v2/topics/\(topicId)/messages")
+         let url = URL(string: "https://api.intra.42.fr/v2/topics.json")
+        var request = URLRequest(url: url!)
+        
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            if let error = error {
+                failure?(error.localizedDescription)
+            } else if data != nil {
+                print(data)
+                print(response)
+                print(self.userId)
+                success?(true)
             }
         }
         task.resume()

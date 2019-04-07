@@ -113,6 +113,88 @@
             </objects>
             <point key="canvasLocation" x="2728.8000000000002" y="26.53673163418291"/>
         </scene>
+        <!--Create Topic View Controller-->
+        <scene sceneID="V8T-ok-Xvp">
+            <objects>
+                <viewController id="BCV-Dg-MUp" customClass="CreateTopicViewController" customModule="Rush00" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yuw-pV-qJB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tXk-Ks-dpo">
+                                <rect key="frame" x="20" y="115" width="280" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="eJ4-wi-AMN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BCV-Dg-MUp" id="9nA-r5-uvB"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Topic Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afz-TY-CVS">
+                                <rect key="frame" x="20" y="84" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Topic Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVO-Cy-mnF">
+                                <rect key="frame" x="20" y="225" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vFF-er-vc9">
+                                <rect key="frame" x="20" y="256" width="280" height="237"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BCV-Dg-MUp" id="HzJ-gr-13B"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLG-Uz-KCz">
+                                <rect key="frame" x="20" y="503" width="280" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dEM-Hc-gLd"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="BCV-Dg-MUp" eventType="touchUpInside" id="zBV-Tz-baJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gVO-Cy-mnF" firstAttribute="top" secondItem="tXk-Ks-dpo" secondAttribute="bottom" constant="10" id="BZX-43-6gd"/>
+                            <constraint firstItem="gVO-Cy-mnF" firstAttribute="trailing" secondItem="afz-TY-CVS" secondAttribute="trailing" id="EB5-2b-rJs"/>
+                            <constraint firstItem="pLG-Uz-KCz" firstAttribute="leading" secondItem="ON8-7k-vpH" secondAttribute="leading" constant="20" id="FoV-bR-iva"/>
+                            <constraint firstItem="ON8-7k-vpH" firstAttribute="trailing" secondItem="afz-TY-CVS" secondAttribute="trailing" constant="20" id="Oxa-zF-wyK"/>
+                            <constraint firstItem="gVO-Cy-mnF" firstAttribute="leading" secondItem="afz-TY-CVS" secondAttribute="leading" id="Pga-ib-cPN"/>
+                            <constraint firstItem="tXk-Ks-dpo" firstAttribute="leading" secondItem="afz-TY-CVS" secondAttribute="leading" id="S61-RH-f4R"/>
+                            <constraint firstItem="ON8-7k-vpH" firstAttribute="trailing" secondItem="vFF-er-vc9" secondAttribute="trailing" constant="20" id="WBY-P0-4Wo"/>
+                            <constraint firstItem="ON8-7k-vpH" firstAttribute="bottom" secondItem="pLG-Uz-KCz" secondAttribute="bottom" constant="20" id="YDG-Ke-vLZ"/>
+                            <constraint firstItem="tXk-Ks-dpo" firstAttribute="top" secondItem="afz-TY-CVS" secondAttribute="bottom" constant="10" id="YIT-ed-AEK"/>
+                            <constraint firstItem="afz-TY-CVS" firstAttribute="leading" secondItem="ON8-7k-vpH" secondAttribute="leading" constant="20" id="YUm-oy-H1v"/>
+                            <constraint firstItem="tXk-Ks-dpo" firstAttribute="trailing" secondItem="afz-TY-CVS" secondAttribute="trailing" id="fZP-Ie-lEo"/>
+                            <constraint firstItem="afz-TY-CVS" firstAttribute="top" secondItem="ON8-7k-vpH" secondAttribute="top" constant="20" id="mWZ-3T-V8A"/>
+                            <constraint firstItem="ON8-7k-vpH" firstAttribute="trailing" secondItem="pLG-Uz-KCz" secondAttribute="trailing" constant="20" id="o5q-Ea-y90"/>
+                            <constraint firstItem="pLG-Uz-KCz" firstAttribute="top" secondItem="vFF-er-vc9" secondAttribute="bottom" constant="10" id="qLx-5L-BmM"/>
+                            <constraint firstItem="vFF-er-vc9" firstAttribute="leading" secondItem="ON8-7k-vpH" secondAttribute="leading" constant="20" id="r9L-CT-wVd"/>
+                            <constraint firstItem="vFF-er-vc9" firstAttribute="top" secondItem="gVO-Cy-mnF" secondAttribute="bottom" constant="10" id="y4d-wZ-7BL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ON8-7k-vpH"/>
+                    </view>
+                    <connections>
+                        <outlet property="topicContentTextView" destination="vFF-er-vc9" id="M2P-5W-wws"/>
+                        <outlet property="topicNameTextView" destination="tXk-Ks-dpo" id="aM8-0V-I3W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJ7-ik-2Nx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1608.75" y="-1444.0140845070423"/>
+        </scene>
         <!--Topics View Controller-->
         <scene sceneID="Daf-uu-nAV">
             <objects>
@@ -148,7 +230,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CgH-kl-Zq8">
-                                <rect key="frame" x="0.0" y="104" width="320" height="464"/>
+                                <rect key="frame" x="0.0" y="104" width="320" height="419"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicsTableViewCell" rowHeight="120" id="SIO-rP-78f" customClass="TopicsTableViewCell" customModule="Rush00" customModuleProvider="target">
@@ -221,27 +303,41 @@
                                     <outlet property="delegate" destination="8Cd-Vd-r7a" id="r60-JM-6ha"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfI-mr-Am0">
+                                <rect key="frame" x="0.0" y="523" width="320" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="GIu-CD-FQ8"/>
+                                </constraints>
+                                <state key="normal" title="Add Topic"/>
+                                <connections>
+                                    <action selector="addTopicPressed:" destination="8Cd-Vd-r7a" eventType="touchUpInside" id="038-hL-GEF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="21r-1D-NkM" firstAttribute="bottom" secondItem="CgH-kl-Zq8" secondAttribute="bottom" id="Ali-nX-F4r"/>
+                            <constraint firstItem="21r-1D-NkM" firstAttribute="trailing" secondItem="RfI-mr-Am0" secondAttribute="trailing" id="8Zf-IC-67a"/>
                             <constraint firstItem="skz-Lc-x7p" firstAttribute="top" secondItem="21r-1D-NkM" secondAttribute="top" id="Eaw-zm-t7v"/>
                             <constraint firstItem="CgH-kl-Zq8" firstAttribute="leading" secondItem="21r-1D-NkM" secondAttribute="leading" id="KYB-6v-qLC"/>
                             <constraint firstItem="21r-1D-NkM" firstAttribute="trailing" secondItem="skz-Lc-x7p" secondAttribute="trailing" id="LaZ-F4-A27"/>
                             <constraint firstItem="21r-1D-NkM" firstAttribute="trailing" secondItem="CgH-kl-Zq8" secondAttribute="trailing" id="MMB-uw-Ahg"/>
+                            <constraint firstItem="RfI-mr-Am0" firstAttribute="leading" secondItem="21r-1D-NkM" secondAttribute="leading" id="N5b-rs-3OJ"/>
                             <constraint firstItem="skz-Lc-x7p" firstAttribute="leading" secondItem="21r-1D-NkM" secondAttribute="leading" id="RfB-eE-xDi"/>
                             <constraint firstItem="CgH-kl-Zq8" firstAttribute="top" secondItem="skz-Lc-x7p" secondAttribute="bottom" id="a80-p0-EyR"/>
+                            <constraint firstItem="RfI-mr-Am0" firstAttribute="top" secondItem="CgH-kl-Zq8" secondAttribute="bottom" id="dZy-q9-73Y"/>
+                            <constraint firstItem="RfI-mr-Am0" firstAttribute="bottom" secondItem="21r-1D-NkM" secondAttribute="bottom" id="fpY-G8-VJI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="21r-1D-NkM"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="CgH-kl-Zq8" id="SWP-bn-eyY"/>
                         <segue destination="KJx-iT-gZY" kind="show" identifier="goToMessages" id="0mE-CS-Adm"/>
+                        <segue destination="BCV-Dg-MUp" kind="show" identifier="goToAddTopic" id="dxI-1a-kOV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbN-39-O3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1608.8" y="-712.89355322338838"/>
+            <point key="canvasLocation" x="1608.75" y="-713.02816901408448"/>
         </scene>
         <!--Messages View Controller-->
         <scene sceneID="MuC-26-JIc">

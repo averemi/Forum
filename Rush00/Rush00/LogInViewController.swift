@@ -22,7 +22,7 @@ class LogInViewController: UIViewController, UIWebViewDelegate {
     func showAuthPage() {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
-        let url = URL(string: "https://api.intra.42.fr/oauth/authorize?client_id=\(ClientInfo.UID)&redirect_uri=rush00%3A%2F%2Faveremii_kkostrub&response_type=code")
+        let url = URL(string: "https://api.intra.42.fr/oauth/authorize?client_id=\(ClientInfo.UID)&redirect_uri=rush00%3A%2F%2Faveremii_kkostrub&scope=public%20forum&response_type=code")
         let requestObj = URLRequest(url: url!)
         webView.loadRequest(requestObj)
         activityIndicator.stopAnimating()

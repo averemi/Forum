@@ -19,14 +19,13 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getData()
-        prepareUI()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        
+        getData()
+        prepareUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -115,6 +114,11 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         APIService.shared.isLoggedIn = false
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func addTopicPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToAddTopic", sender: self)
+    }
+    
     
 }
 

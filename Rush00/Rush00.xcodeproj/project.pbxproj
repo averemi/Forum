@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200BAFA8225A5AA8008291CD /* CreateTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BAFA7225A5AA8008291CD /* CreateTopicViewController.swift */; };
 		20DBCE81225915A0006DD689 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE80225915A0006DD689 /* MessageTableViewCell.swift */; };
 		20DBCE8322592BC7006DD689 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE8222592BC7006DD689 /* ResponseViewController.swift */; };
 		20DBCE8522592C03006DD689 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE8422592C03006DD689 /* ResponseModel.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		200BAFA7225A5AA8008291CD /* CreateTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTopicViewController.swift; sourceTree = "<group>"; };
 		20DBCE80225915A0006DD689 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		20DBCE8222592BC7006DD689 /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
 		20DBCE8422592C03006DD689 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				20DBCE8222592BC7006DD689 /* ResponseViewController.swift */,
 				20DBCE8422592C03006DD689 /* ResponseModel.swift */,
 				20DBCE86225933F9006DD689 /* ResponseTableViewCell.swift */,
+				200BAFA7225A5AA8008291CD /* CreateTopicViewController.swift */,
 			);
 			path = Rush00;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20EBF7BD2258D08D00700E0B /* StartViewController.swift in Sources */,
+				200BAFA8225A5AA8008291CD /* CreateTopicViewController.swift in Sources */,
 				20EBF7BB2258D08D00700E0B /* AppDelegate.swift in Sources */,
 				20EBF7CF2258D6D700700E0B /* MessagesViewController.swift in Sources */,
 				20DBCE8522592C03006DD689 /* ResponseModel.swift in Sources */,

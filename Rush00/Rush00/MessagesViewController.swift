@@ -88,8 +88,13 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
         guard indexPath.row != 0 else { return }
 
-        selectedMessage = messages[indexPath.row]
-        performSegue(withIdentifier: "goToResponses", sender: self)
+     /*   selectedMessage = messages[indexPath.row]
+        performSegue(withIdentifier: "goToResponses", sender: self)*/
+        APIService.shared.addMessage(message: "Content Hello", topicId: (selectedTopic?.topicId)!, success: { (isSuccess) in
+            
+        }, failure: { error in
+            print(error)
+        })
     }
 
 }
