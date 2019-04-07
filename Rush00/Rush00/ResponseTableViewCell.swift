@@ -12,9 +12,11 @@ class ResponseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     func configure(response: Responses) {
         authorLabel.text = response.author
         messageLabel.text = response.content
+        dateLabel.text = response.date
     }
 }

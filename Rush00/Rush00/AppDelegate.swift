@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let userCode = url.absoluteString.components(separatedBy: "=").last {
                 APIService.shared.userCode = userCode
                 if let vc = self.window?.rootViewController as? UINavigationController {
+                    APIService.shared.isLoggedIn = true
                     vc.popViewController(animated: true)
                 }
             }

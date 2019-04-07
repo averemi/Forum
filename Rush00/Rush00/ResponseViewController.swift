@@ -37,7 +37,7 @@ class ResponseViewController: UIViewController, UITableViewDelegate, UITableView
                     response.date = dateCreated.components(separatedBy: "T").first!
                 }
                 if let content = responseArr["content"] as? String {
-                    message.content = content
+                    response.content = content
                 }
                 self.responses.append(response)
             }
@@ -50,9 +50,9 @@ class ResponseViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func prepareUI() {
-     /*   tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 120.0*/
-//        self.tableView.reloadData()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120.0
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

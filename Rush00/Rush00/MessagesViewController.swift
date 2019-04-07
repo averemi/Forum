@@ -68,7 +68,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
             newViewController.selectedMessage = selectedMessage
         }
     }
-    
+   
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
@@ -84,9 +84,9 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-     //   guard indexPath.row !=  else { return }
+        guard indexPath.row != 0 else { return }
 
         selectedMessage = messages[indexPath.row]
         performSegue(withIdentifier: "goToResponses", sender: self)

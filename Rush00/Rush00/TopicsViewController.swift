@@ -10,6 +10,7 @@ import UIKit
 
 class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -23,8 +24,13 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         prepareUI()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = false
     }
     
@@ -71,16 +77,15 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToMessages" {
-       /*     guard let newViewController = segue.destination as? MessagesViewController else { return }
+            guard let newViewController = segue.destination as? MessagesViewController else { return }
             
             newViewController.selectedTopic = selectedTopic
-            APIService.shared.createTopic(content: "Content Hello", title: "Title Hello", success: { (isSuccess) in
+           /* APIService.shared.createTopic(content: "Content Hello", title: "Title Hello", success: { (isSuccess) in
                 
                 }, failure: { error in
                     print(error)
             })
         }*/
-            APIService.shared.isLoggedIn = false
         }
     }
     
@@ -107,6 +112,8 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func logOut(_ sender: UIButton) {
+        APIService.shared.isLoggedIn = false
+        navigationController?.popViewController(animated: true)
     }
     
 }
