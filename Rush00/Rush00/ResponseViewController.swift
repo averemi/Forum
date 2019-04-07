@@ -55,6 +55,15 @@ class ResponseViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToEditMessage" {
+            guard let newViewController = segue.destination as? EditMessageViewController else { return }
+            
+            newViewController.messageText = (selectedMessage?.content)!
+            newViewController.messageId = (selectedMessage?.id)!
+        }
+    }
+    
     @IBAction func deleteMessageTapped(_ sender: UIButton) {
         APIService.shared.deleteMessage(messageId: (selectedMessage?.id)!, success: { (isSuccess) in
             DispatchQueue.main.async {
@@ -64,6 +73,11 @@ class ResponseViewController: UIViewController, UITableViewDelegate, UITableView
             print(error)
         }
     }
+    
+    @IBAction func updateMessageTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToEditMessage", sender: self)
+    }
+    
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension

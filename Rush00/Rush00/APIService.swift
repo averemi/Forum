@@ -237,6 +237,23 @@ class APIService {
         }
         task.resume()
     }
+    
+    func updateMessage(editedMessage: String, messageId: Int, success: ((Bool)->Void)?, failure: ((String)->Void)?) {
+        let url = URL(string: "https://api.intra.42.fr/v2/messages/\(messageId)")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "PUT"
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            if let error = error {
+                failure?(error.localizedDescription)
+            } else if data != nil {
+                success?(true)
+            }
+        }
+        task.resume()
+    }
 }
 
 extension APIService {

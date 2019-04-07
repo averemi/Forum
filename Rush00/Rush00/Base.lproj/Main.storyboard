@@ -252,6 +252,65 @@
             </objects>
             <point key="canvasLocation" x="2481" y="-1447"/>
         </scene>
+        <!--Edit Message View Controller-->
+        <scene sceneID="J3Y-Fs-Uxo">
+            <objects>
+                <viewController id="3dS-Vf-RO1" customClass="EditMessageViewController" customModule="Rush00" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="brQ-MJ-1gr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kPq-9P-d68">
+                                <rect key="frame" x="20" y="125" width="280" height="358"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3dS-Vf-RO1" id="L4h-xI-2QL"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0o-Ho-ohG">
+                                <rect key="frame" x="20" y="84" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k67-9W-fTc">
+                                <rect key="frame" x="20" y="503" width="280" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="hDc-AW-iMC"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="3dS-Vf-RO1" eventType="touchUpInside" id="9ii-NX-6zf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kPq-9P-d68" firstAttribute="top" secondItem="H0o-Ho-ohG" secondAttribute="bottom" constant="20" id="2JE-22-teJ"/>
+                            <constraint firstItem="H0o-Ho-ohG" firstAttribute="leading" secondItem="brQ-MJ-1gr" secondAttribute="leading" constant="20" id="4i9-Lf-gMc"/>
+                            <constraint firstItem="hSW-ZC-Qc9" firstAttribute="trailing" secondItem="H0o-Ho-ohG" secondAttribute="trailing" constant="20" id="IfN-GD-euu"/>
+                            <constraint firstItem="hSW-ZC-Qc9" firstAttribute="trailing" secondItem="k67-9W-fTc" secondAttribute="trailing" constant="20" id="NJe-6m-iMT"/>
+                            <constraint firstItem="kPq-9P-d68" firstAttribute="top" secondItem="H0o-Ho-ohG" secondAttribute="bottom" constant="20" id="Pd4-uB-DDg"/>
+                            <constraint firstItem="hSW-ZC-Qc9" firstAttribute="trailing" secondItem="kPq-9P-d68" secondAttribute="trailing" constant="20" id="QM1-4G-kbp"/>
+                            <constraint firstItem="k67-9W-fTc" firstAttribute="top" secondItem="kPq-9P-d68" secondAttribute="bottom" constant="20" id="caO-bX-9iX"/>
+                            <constraint firstItem="H0o-Ho-ohG" firstAttribute="top" secondItem="hSW-ZC-Qc9" secondAttribute="top" constant="20" id="ck9-ZH-tl6"/>
+                            <constraint firstItem="k67-9W-fTc" firstAttribute="leading" secondItem="brQ-MJ-1gr" secondAttribute="leading" constant="20" id="eEg-oY-thR"/>
+                            <constraint firstItem="kPq-9P-d68" firstAttribute="leading" secondItem="brQ-MJ-1gr" secondAttribute="leading" constant="20" id="gGC-Bm-Vo7"/>
+                            <constraint firstItem="hSW-ZC-Qc9" firstAttribute="bottom" secondItem="k67-9W-fTc" secondAttribute="bottom" constant="20" id="hA1-Uu-Nzw"/>
+                            <constraint firstItem="k67-9W-fTc" firstAttribute="top" secondItem="kPq-9P-d68" secondAttribute="bottom" constant="20" id="kSn-P5-tJ6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hSW-ZC-Qc9"/>
+                    </view>
+                    <connections>
+                        <outlet property="editMessageTextView" destination="kPq-9P-d68" id="F9G-UP-Z0q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkR-bS-puK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3377" y="-1447"/>
+        </scene>
         <!--Topics View Controller-->
         <scene sceneID="Daf-uu-nAV">
             <objects>
@@ -530,7 +589,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="doo-uG-FUp">
-                                <rect key="frame" x="0.0" y="64" width="320" height="459"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="414"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="responsesCell" rowHeight="109" id="T9B-h7-Lcg" customClass="ResponseTableViewCell" customModule="Rush00" customModuleProvider="target">
@@ -598,21 +657,41 @@
                                     <action selector="deleteMessageTapped:" destination="JO9-Uk-4HH" eventType="touchUpInside" id="7gI-CO-90U"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-G0-YEb">
+                                <rect key="frame" x="0.0" y="478" width="320" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="cNZ-QK-N8l"/>
+                                </constraints>
+                                <state key="normal" title="EDIT MESSAGE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateMessageTapped:" destination="JO9-Uk-4HH" eventType="touchUpInside" id="zBy-UR-N6L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VoF-vg-nGU" firstAttribute="top" secondItem="doo-uG-FUp" secondAttribute="bottom" id="86k-Vl-dRw"/>
+                            <constraint firstItem="VoF-vg-nGU" firstAttribute="top" secondItem="bRR-G0-YEb" secondAttribute="bottom" id="6ez-BB-eKa"/>
                             <constraint firstItem="tii-eB-0zk" firstAttribute="bottom" secondItem="VoF-vg-nGU" secondAttribute="bottom" id="9hr-t7-pMR"/>
                             <constraint firstItem="tii-eB-0zk" firstAttribute="trailing" secondItem="doo-uG-FUp" secondAttribute="trailing" id="EdN-fO-0oG"/>
+                            <constraint firstItem="bRR-G0-YEb" firstAttribute="trailing" secondItem="tii-eB-0zk" secondAttribute="trailing" id="N9N-ge-nrr"/>
+                            <constraint firstItem="VoF-vg-nGU" firstAttribute="leading" secondItem="tii-eB-0zk" secondAttribute="leading" id="TBT-hI-RZ9"/>
                             <constraint firstItem="doo-uG-FUp" firstAttribute="top" secondItem="tii-eB-0zk" secondAttribute="top" id="TDg-AZ-URc"/>
                             <constraint firstAttribute="trailing" secondItem="VoF-vg-nGU" secondAttribute="trailing" id="UpX-s3-f9P"/>
+                            <constraint firstItem="bRR-G0-YEb" firstAttribute="top" secondItem="doo-uG-FUp" secondAttribute="bottom" id="Vfw-LW-veA"/>
+                            <constraint firstItem="bRR-G0-YEb" firstAttribute="leading" secondItem="tii-eB-0zk" secondAttribute="leading" id="cfD-CS-rkR"/>
+                            <constraint firstItem="VoF-vg-nGU" firstAttribute="bottom" secondItem="tii-eB-0zk" secondAttribute="bottom" id="gB0-K1-55o"/>
                             <constraint firstItem="doo-uG-FUp" firstAttribute="leading" secondItem="tii-eB-0zk" secondAttribute="leading" id="mHk-He-m6I"/>
                             <constraint firstItem="VoF-vg-nGU" firstAttribute="leading" secondItem="tii-eB-0zk" secondAttribute="leading" id="qEd-y8-0Ir"/>
+                            <constraint firstItem="VoF-vg-nGU" firstAttribute="trailing" secondItem="tii-eB-0zk" secondAttribute="trailing" id="udz-za-vcQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tii-eB-0zk"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="doo-uG-FUp" id="txp-eB-kZm"/>
+                        <segue destination="3dS-Vf-RO1" kind="show" identifier="goToEditMessage" id="Wb0-lD-HFC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8F-V8-Mw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
