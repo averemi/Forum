@@ -143,9 +143,6 @@ class APIService {
             if let error = error {
                 failure?(error.localizedDescription)
             } else if data != nil {
-                print(data)
-                print(response)
-                print(self.userId)
                 success?(true)
             }
         }
@@ -177,33 +174,22 @@ class APIService {
     }
     
     func addMessage(message: String, topicId: Int, success: ((Bool)->Void)?, failure: ((String)->Void)?){
-        // prepare json data
-     //   let json = ["topic_id": "\(topicId)", "message": ["author_id":"\(userId)", "content":"Hello world", "messageable_id": "7", "messageable_type":"Topic"]]
+        let url = URL(string: "https://api.intra.42.fr/v2/topics/\(topicId)/messages")
         let json = [
-            "topic": [
-                "author_id": nil,
-                "cursus_ids": ["1"],
-                "kind": "normal",
-                "messages_attributes": [
-                    [
-                        "content": message,
-                        ],
-                ],
-                "name": "Hello",
-                "tag_ids": ["574"],
+            "message": [
+                "author_id": "\(userId)",
+                "content": message,
+                "messageable_id": "\(topicId)",
+                "messageable_type":"Topic",
             ],
         ]
         let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-
-     //   let url = URL(string: "https://api.intra.42.fr/v2/topics/\(topicId)/messages")
-         let url = URL(string: "https://api.intra.42.fr/v2/topics.json")
         var request = URLRequest(url: url!)
         
         request.httpMethod = "POST"
         request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        // insert json data to the request
         request.httpBody = jsonData
 
         
@@ -212,9 +198,6 @@ class APIService {
             if let error = error {
                 failure?(error.localizedDescription)
             } else if data != nil {
-                print(data)
-                print(response)
-                print(self.userId)
                 success?(true)
             }
         }

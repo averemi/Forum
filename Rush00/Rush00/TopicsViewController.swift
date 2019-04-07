@@ -79,12 +79,6 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             guard let newViewController = segue.destination as? MessagesViewController else { return }
             
             newViewController.selectedTopic = selectedTopic
-           /* APIService.shared.createTopic(content: "Content Hello", title: "Title Hello", success: { (isSuccess) in
-                
-                }, failure: { error in
-                    print(error)
-            })
-        }*/
         }
     }
     

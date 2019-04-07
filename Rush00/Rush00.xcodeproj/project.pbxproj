@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		200BAFA8225A5AA8008291CD /* CreateTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BAFA7225A5AA8008291CD /* CreateTopicViewController.swift */; };
+		200BAFAA225A6574008291CD /* CreateMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BAFA9225A6574008291CD /* CreateMessageViewController.swift */; };
 		20DBCE81225915A0006DD689 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE80225915A0006DD689 /* MessageTableViewCell.swift */; };
 		20DBCE8322592BC7006DD689 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE8222592BC7006DD689 /* ResponseViewController.swift */; };
 		20DBCE8522592C03006DD689 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBCE8422592C03006DD689 /* ResponseModel.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		200BAFA7225A5AA8008291CD /* CreateTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTopicViewController.swift; sourceTree = "<group>"; };
+		200BAFA9225A6574008291CD /* CreateMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMessageViewController.swift; sourceTree = "<group>"; };
 		20DBCE80225915A0006DD689 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		20DBCE8222592BC7006DD689 /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
 		20DBCE8422592C03006DD689 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				20DBCE8422592C03006DD689 /* ResponseModel.swift */,
 				20DBCE86225933F9006DD689 /* ResponseTableViewCell.swift */,
 				200BAFA7225A5AA8008291CD /* CreateTopicViewController.swift */,
+				200BAFA9225A6574008291CD /* CreateMessageViewController.swift */,
 			);
 			path = Rush00;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				20EBF7DB2258D99B00700E0B /* APIService.swift in Sources */,
 				20DBCE87225933F9006DD689 /* ResponseTableViewCell.swift in Sources */,
 				20DBCE8322592BC7006DD689 /* ResponseViewController.swift in Sources */,
+				200BAFAA225A6574008291CD /* CreateMessageViewController.swift in Sources */,
 				20EBF7CD2258D66500700E0B /* LogInViewController.swift in Sources */,
 				20EBF7D72258D92100700E0B /* MessagesModel.swift in Sources */,
 				20EBF7D92258D93C00700E0B /* Constants.swift in Sources */,

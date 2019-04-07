@@ -18,7 +18,10 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getData()
         prepareUI()
     }
@@ -67,6 +70,11 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
             
             newViewController.selectedMessage = selectedMessage
         }
+        else if segue.identifier == "goToAddMessages" {
+            guard let newViewController = segue.destination as? CreateMessageViewController else { return }
+            
+            newViewController.topicId = (selectedTopic?.topicId)!
+        }
     }
    
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -88,18 +96,12 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
         guard indexPath.row != 0 else { return }
 
-     /*   selectedMessage = messages[indexPath.row]
-        performSegue(withIdentifier: "goToResponses", sender: self)*/
-        APIService.shared.addMessage(message: "Content Hello", topicId: (selectedTopic?.topicId)!, success: { (isSuccess) in
-            
-        }, failure: { error in
-            print(error)
-        })
-    }
-    
-    @IBAction func addMessage(_ sender: UIButton) {
+        selectedMessage = messages[indexPath.row]
+        performSegue(withIdentifier: "goToResponses", sender: self)
         
     }
     
-
+    @IBAction func addMessage(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToAddMessages", sender: self)
+    }
 }

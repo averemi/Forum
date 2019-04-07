@@ -12,6 +12,7 @@ class CreateTopicViewController: UIViewController {
 
     @IBOutlet weak var topicContentTextView: UITextView!
     @IBOutlet weak var topicNameTextView: UITextView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

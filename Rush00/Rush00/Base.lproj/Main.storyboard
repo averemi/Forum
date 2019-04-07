@@ -195,6 +195,63 @@
             </objects>
             <point key="canvasLocation" x="1608.75" y="-1444.0140845070423"/>
         </scene>
+        <!--Create Message View Controller-->
+        <scene sceneID="53R-KG-iJb">
+            <objects>
+                <viewController id="LVN-A0-gEQ" customClass="CreateMessageViewController" customModule="Rush00" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S5r-6J-uEx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write Your Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cv6-KA-gbD">
+                                <rect key="frame" x="20" y="84" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjx-fo-47s">
+                                <rect key="frame" x="20" y="503" width="280" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="alj-2C-euJ"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="LVN-A0-gEQ" eventType="touchUpInside" id="eyt-iN-YFp"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DlO-xy-CRi">
+                                <rect key="frame" x="20" y="125" width="280" height="358"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="LVN-A0-gEQ" id="A1w-QQ-V7t"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DlO-xy-CRi" firstAttribute="leading" secondItem="LhH-2m-S2k" secondAttribute="leading" constant="20" id="E0b-fo-hza"/>
+                            <constraint firstItem="LhH-2m-S2k" firstAttribute="trailing" secondItem="Qjx-fo-47s" secondAttribute="trailing" constant="20" id="NY3-PR-6fG"/>
+                            <constraint firstItem="LhH-2m-S2k" firstAttribute="trailing" secondItem="DlO-xy-CRi" secondAttribute="trailing" constant="20" id="R48-8Y-0ER"/>
+                            <constraint firstItem="Cv6-KA-gbD" firstAttribute="leading" secondItem="LhH-2m-S2k" secondAttribute="leading" constant="20" id="TSj-ia-W0v"/>
+                            <constraint firstItem="DlO-xy-CRi" firstAttribute="top" secondItem="Cv6-KA-gbD" secondAttribute="bottom" constant="20" id="Uc0-EM-6oS"/>
+                            <constraint firstItem="LhH-2m-S2k" firstAttribute="trailing" secondItem="Cv6-KA-gbD" secondAttribute="trailing" constant="20" id="dkM-Gz-hSk"/>
+                            <constraint firstAttribute="bottom" secondItem="Qjx-fo-47s" secondAttribute="bottom" constant="20" id="lLU-pL-kQv"/>
+                            <constraint firstItem="Qjx-fo-47s" firstAttribute="leading" secondItem="LhH-2m-S2k" secondAttribute="leading" constant="20" id="rpp-rP-t6o"/>
+                            <constraint firstItem="Qjx-fo-47s" firstAttribute="top" secondItem="DlO-xy-CRi" secondAttribute="bottom" constant="20" id="ux6-vB-j80"/>
+                            <constraint firstItem="Cv6-KA-gbD" firstAttribute="top" secondItem="LhH-2m-S2k" secondAttribute="top" constant="20" id="xuf-nU-n1q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LhH-2m-S2k"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageTextView" destination="DlO-xy-CRi" id="hrt-Ve-dLM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzL-2H-e6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2481" y="-1447"/>
+        </scene>
         <!--Topics View Controller-->
         <scene sceneID="Daf-uu-nAV">
             <objects>
@@ -441,6 +498,7 @@
                         <outlet property="tableView" destination="nKq-qk-xdH" id="riE-gi-9Rf"/>
                         <outlet property="titleLabel" destination="sdG-zb-Hj4" id="kjL-Lf-cPE"/>
                         <segue destination="JO9-Uk-4HH" kind="show" identifier="goToResponses" id="wSe-FX-v6j"/>
+                        <segue destination="LVN-A0-gEQ" kind="show" identifier="goToAddMessages" id="JnY-zy-6xF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVu-iQ-O7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
