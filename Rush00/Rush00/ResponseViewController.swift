@@ -55,6 +55,16 @@ class ResponseViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.reloadData()
     }
     
+    @IBAction func deleteMessageTapped(_ sender: UIButton) {
+        APIService.shared.deleteMessage(messageId: (selectedMessage?.id)!, success: { (isSuccess) in
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }) { (error) in
+            print(error)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }

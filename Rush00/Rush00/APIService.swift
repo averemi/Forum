@@ -203,6 +203,40 @@ class APIService {
         }
         task.resume()
     }
+    
+    func deleteMessage(messageId: Int, success: ((Bool)->Void)?, failure: ((String)->Void)?) {
+        let url = URL(string: "https://api.intra.42.fr/v2/messages/\(messageId)")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "DELETE"
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            if let error = error {
+                failure?(error.localizedDescription)
+            } else if data != nil {
+                success?(true)
+            }
+        }
+        task.resume()
+    }
+    
+    func deleteTopic(topicId: Int, success: ((Bool)->Void)?, failure: ((String)->Void)?) {
+        let url = URL(string: "https://api.intra.42.fr/v2/topics/\(topicId).json")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "DELETE"
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            if let error = error {
+                failure?(error.localizedDescription)
+            } else if data != nil {
+                success?(true)
+            }
+        }
+        task.resume()
+    }
 }
 
 extension APIService {

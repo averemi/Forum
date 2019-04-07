@@ -104,4 +104,15 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func addMessage(_ sender: UIButton) {
         performSegue(withIdentifier: "goToAddMessages", sender: self)
     }
+    
+    @IBAction func deleteTopic(_ sender: UIButton) {
+        APIService.shared.deleteTopic(topicId: (selectedTopic?.topicId)!, success: { (isSuccess) in
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }) { (error) in
+            print(error)
+        }
+    }
+    
 }

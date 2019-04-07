@@ -411,7 +411,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nKq-qk-xdH">
-                                <rect key="frame" x="0.0" y="85" width="320" height="438"/>
+                                <rect key="frame" x="0.0" y="85" width="320" height="393"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="messagesCell" rowHeight="117" id="2k0-bk-0bb" customClass="MessageTableViewCell" customModule="Rush00" customModuleProvider="target">
@@ -465,9 +465,9 @@
                                     <outlet property="delegate" destination="KJx-iT-gZY" id="vzu-KG-l22"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK9-ff-AfV">
-                                <rect key="frame" x="0.0" y="523" width="320" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.70308872951649626" blue="0.66860767400946219" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK9-ff-AfV">
+                                <rect key="frame" x="0.0" y="478" width="320" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="RTb-qv-rfE"/>
                                 </constraints>
@@ -478,19 +478,35 @@
                                     <action selector="addMessage:" destination="KJx-iT-gZY" eventType="touchUpInside" id="N83-AC-VRk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rf-Hq-gBz">
+                                <rect key="frame" x="0.0" y="523" width="320" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.70308872950000001" blue="0.66860767399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="nGD-TT-JBq"/>
+                                </constraints>
+                                <state key="normal" title="DELETE TOPIC">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteTopic:" destination="KJx-iT-gZY" eventType="touchUpInside" id="Jsf-O8-cLv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="evd-e6-AcQ" firstAttribute="trailing" secondItem="PK9-ff-AfV" secondAttribute="trailing" id="3YW-CB-XeZ"/>
+                            <constraint firstItem="3rf-Hq-gBz" firstAttribute="top" secondItem="PK9-ff-AfV" secondAttribute="bottom" id="3eQ-ed-2zE"/>
                             <constraint firstItem="PK9-ff-AfV" firstAttribute="top" secondItem="nKq-qk-xdH" secondAttribute="bottom" id="4k1-Ln-cDY"/>
+                            <constraint firstItem="3rf-Hq-gBz" firstAttribute="leading" secondItem="vtH-NT-aO2" secondAttribute="leading" id="7Ik-rQ-gu4"/>
                             <constraint firstItem="sdG-zb-Hj4" firstAttribute="top" secondItem="evd-e6-AcQ" secondAttribute="top" id="7wk-gm-ykq"/>
                             <constraint firstItem="evd-e6-AcQ" firstAttribute="trailing" secondItem="nKq-qk-xdH" secondAttribute="trailing" id="AGy-JW-C8E"/>
                             <constraint firstItem="sdG-zb-Hj4" firstAttribute="leading" secondItem="evd-e6-AcQ" secondAttribute="leading" constant="10" id="NQq-Y9-8Ic"/>
                             <constraint firstItem="nKq-qk-xdH" firstAttribute="top" secondItem="sdG-zb-Hj4" secondAttribute="bottom" id="QtT-0A-Ddj"/>
                             <constraint firstItem="PK9-ff-AfV" firstAttribute="leading" secondItem="evd-e6-AcQ" secondAttribute="leading" id="ZZo-Xp-xWj"/>
                             <constraint firstItem="nKq-qk-xdH" firstAttribute="leading" secondItem="evd-e6-AcQ" secondAttribute="leading" id="muc-NX-G0O"/>
+                            <constraint firstAttribute="trailing" secondItem="3rf-Hq-gBz" secondAttribute="trailing" id="sg8-4T-pxf"/>
                             <constraint firstItem="evd-e6-AcQ" firstAttribute="trailing" secondItem="sdG-zb-Hj4" secondAttribute="trailing" constant="10" id="ugQ-ST-1VY"/>
-                            <constraint firstItem="evd-e6-AcQ" firstAttribute="bottom" secondItem="PK9-ff-AfV" secondAttribute="bottom" id="vza-8l-Jrt"/>
+                            <constraint firstItem="evd-e6-AcQ" firstAttribute="bottom" secondItem="3rf-Hq-gBz" secondAttribute="bottom" id="ywK-Ot-t5q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="evd-e6-AcQ"/>
                     </view>
@@ -514,7 +530,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="doo-uG-FUp">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="459"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="responsesCell" rowHeight="109" id="T9B-h7-Lcg" customClass="ResponseTableViewCell" customModule="Rush00" customModuleProvider="target">
@@ -569,13 +585,29 @@
                                     <outlet property="delegate" destination="JO9-Uk-4HH" id="xcY-Lu-C6Q"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoF-vg-nGU">
+                                <rect key="frame" x="0.0" y="523" width="320" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.70308872950000001" blue="0.66860767399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="htg-Vl-ob8"/>
+                                </constraints>
+                                <state key="normal" title="DELETE MESSAGE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteMessageTapped:" destination="JO9-Uk-4HH" eventType="touchUpInside" id="7gI-CO-90U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="VoF-vg-nGU" firstAttribute="top" secondItem="doo-uG-FUp" secondAttribute="bottom" id="86k-Vl-dRw"/>
+                            <constraint firstItem="tii-eB-0zk" firstAttribute="bottom" secondItem="VoF-vg-nGU" secondAttribute="bottom" id="9hr-t7-pMR"/>
                             <constraint firstItem="tii-eB-0zk" firstAttribute="trailing" secondItem="doo-uG-FUp" secondAttribute="trailing" id="EdN-fO-0oG"/>
                             <constraint firstItem="doo-uG-FUp" firstAttribute="top" secondItem="tii-eB-0zk" secondAttribute="top" id="TDg-AZ-URc"/>
-                            <constraint firstItem="tii-eB-0zk" firstAttribute="bottom" secondItem="doo-uG-FUp" secondAttribute="bottom" id="dI8-C5-z0v"/>
+                            <constraint firstAttribute="trailing" secondItem="VoF-vg-nGU" secondAttribute="trailing" id="UpX-s3-f9P"/>
                             <constraint firstItem="doo-uG-FUp" firstAttribute="leading" secondItem="tii-eB-0zk" secondAttribute="leading" id="mHk-He-m6I"/>
+                            <constraint firstItem="VoF-vg-nGU" firstAttribute="leading" secondItem="tii-eB-0zk" secondAttribute="leading" id="qEd-y8-0Ir"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tii-eB-0zk"/>
                     </view>
@@ -585,7 +617,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8F-V8-Mw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3378" y="-713"/>
+            <point key="canvasLocation" x="3376.875" y="-713.02816901408448"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3BI-G3-YiT">
