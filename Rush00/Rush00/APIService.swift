@@ -12,9 +12,7 @@ class APIService {
     var userCode: String = ""
     var accessToken: String = ""
     var userId: Int = 0
-    var isLoggedIn = true // CHANGE TO FALSE
-    
-    ///// NOT FORGET TO CHANGE ISLOGGEDIN TO FALSE
+    var isLoggedIn = false
     
     func getAccessToken(success: ((Bool)->Void)?, failure: ((String)->Void)?) {
         
@@ -240,15 +238,29 @@ class APIService {
     
     func updateMessage(editedMessage: String, messageId: Int, success: ((Bool)->Void)?, failure: ((String)->Void)?) {
         let url = URL(string: "https://api.intra.42.fr/v2/messages/\(messageId)")
+        let json = [
+            "message": [
+                "author_id": "\(userId)",
+                "content": editedMessage,
+                "messageable_id": "1",
+                "messageable_type":"Topic",
+            ],
+        ]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
         var request = URLRequest(url: url!)
         request.httpMethod = "PUT"
         request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        request.httpBody = jsonData
+    
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             if let error = error {
                 failure?(error.localizedDescription)
             } else if data != nil {
+                print(editedMessage)
+                print(response)
                 success?(true)
             }
         }
