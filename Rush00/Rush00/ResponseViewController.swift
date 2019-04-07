@@ -42,7 +42,7 @@ class ResponseViewController: UIViewController, UITableViewDelegate, UITableView
                 self.responses.append(response)
             }
             DispatchQueue.main.async {
-            //    self.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }, failure: { error in
             print(error)
@@ -52,6 +52,7 @@ class ResponseViewController: UIViewController, UITableViewDelegate, UITableView
     func prepareUI() {
      /*   tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120.0*/
+//        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -64,6 +65,7 @@ class ResponseViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "responsesCell") as! ResponseTableViewCell
+        print(cell.configure(response: responses[indexPath.row]))
         cell.configure(response: responses[indexPath.row])
         
         return cell

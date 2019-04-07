@@ -69,9 +69,9 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToMessages" {
-        /*    guard let newViewController = segue.destination as? MessagesViewController else { return }
+            guard let newViewController = segue.destination as? MessagesViewController else { return }
             
-            newViewController.selectedTopic = selectedTopic*/
+            newViewController.selectedTopic = selectedTopic
             APIService.shared.createTopic(content: "Content Hello", title: "Title Hello", success: { (isSuccess) in
                 
                 }, failure: { error in
@@ -88,6 +88,8 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicsTableViewCell") as! TopicsTableViewCell
         
         let topic = topics[indexPath.row]
+//        print("--------")
+//        print(topic)
         cell.configure(topic: topic)
         
         return cell

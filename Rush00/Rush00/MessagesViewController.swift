@@ -27,6 +27,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         guard let topic = selectedTopic else { return }
         APIService.shared.getMessages(topicId: topic.topicId, success: { (messageArray) in
             self.messages.removeAll()
+            print(messageArray)
             for element in messageArray {
                 var messageArr = element as! [String: Any]
                 let message = Messages()
