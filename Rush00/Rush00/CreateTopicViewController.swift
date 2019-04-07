@@ -19,7 +19,7 @@ class CreateTopicViewController: UIViewController {
     }
 
     @IBAction func donePressed(_ sender: UIButton) {
-        APIService.shared.createTopic(content: topicNameTextView.text, title: topicNameTextView.text, success: { (isSuccess) in
+        APIService.shared.createTopic(content: topicContentTextView.text, title: topicNameTextView.text, success: { (isSuccess) in
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: true)
             }
