@@ -258,7 +258,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nKq-qk-xdH">
-                                <rect key="frame" x="0.0" y="85" width="320" height="483"/>
+                                <rect key="frame" x="0.0" y="85" width="320" height="438"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="messagesCell" rowHeight="117" id="2k0-bk-0bb" customClass="MessageTableViewCell" customModule="Rush00" customModuleProvider="target">
@@ -312,16 +312,32 @@
                                     <outlet property="delegate" destination="KJx-iT-gZY" id="vzu-KG-l22"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK9-ff-AfV">
+                                <rect key="frame" x="0.0" y="523" width="320" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.70308872951649626" blue="0.66860767400946219" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="RTb-qv-rfE"/>
+                                </constraints>
+                                <state key="normal" title="ADD MESSAGE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addMessage:" destination="KJx-iT-gZY" eventType="touchUpInside" id="N83-AC-VRk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="evd-e6-AcQ" firstAttribute="trailing" secondItem="PK9-ff-AfV" secondAttribute="trailing" id="3YW-CB-XeZ"/>
+                            <constraint firstItem="PK9-ff-AfV" firstAttribute="top" secondItem="nKq-qk-xdH" secondAttribute="bottom" id="4k1-Ln-cDY"/>
                             <constraint firstItem="sdG-zb-Hj4" firstAttribute="top" secondItem="evd-e6-AcQ" secondAttribute="top" id="7wk-gm-ykq"/>
                             <constraint firstItem="evd-e6-AcQ" firstAttribute="trailing" secondItem="nKq-qk-xdH" secondAttribute="trailing" id="AGy-JW-C8E"/>
                             <constraint firstItem="sdG-zb-Hj4" firstAttribute="leading" secondItem="evd-e6-AcQ" secondAttribute="leading" constant="10" id="NQq-Y9-8Ic"/>
                             <constraint firstItem="nKq-qk-xdH" firstAttribute="top" secondItem="sdG-zb-Hj4" secondAttribute="bottom" id="QtT-0A-Ddj"/>
-                            <constraint firstItem="evd-e6-AcQ" firstAttribute="bottom" secondItem="nKq-qk-xdH" secondAttribute="bottom" id="byG-RZ-s9r"/>
+                            <constraint firstItem="PK9-ff-AfV" firstAttribute="leading" secondItem="evd-e6-AcQ" secondAttribute="leading" id="ZZo-Xp-xWj"/>
                             <constraint firstItem="nKq-qk-xdH" firstAttribute="leading" secondItem="evd-e6-AcQ" secondAttribute="leading" id="muc-NX-G0O"/>
                             <constraint firstItem="evd-e6-AcQ" firstAttribute="trailing" secondItem="sdG-zb-Hj4" secondAttribute="trailing" constant="10" id="ugQ-ST-1VY"/>
+                            <constraint firstItem="evd-e6-AcQ" firstAttribute="bottom" secondItem="PK9-ff-AfV" secondAttribute="bottom" id="vza-8l-Jrt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="evd-e6-AcQ"/>
                     </view>
@@ -333,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVu-iQ-O7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2505" y="-714"/>
+            <point key="canvasLocation" x="2505" y="-714.08450704225356"/>
         </scene>
         <!--Response View Controller-->
         <scene sceneID="YcF-Qc-yzG">

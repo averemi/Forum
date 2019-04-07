@@ -91,5 +91,10 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         selectedMessage = messages[indexPath.row]
         performSegue(withIdentifier: "goToResponses", sender: self)
     }
+    
+    @IBAction func addMessage(_ sender: UIButton) {
+        
+    }
+    
 
 }

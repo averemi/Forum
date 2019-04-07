@@ -97,8 +97,6 @@ class TopicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicsTableViewCell") as! TopicsTableViewCell
         
         let topic = topics[indexPath.row]
-//        print("--------")
-//        print(topic)
         cell.configure(topic: topic)
         
         return cell
