@@ -122,9 +122,29 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skz-Lc-x7p" userLabel="Top Bar View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-8L-1Sb">
+                                        <rect key="frame" x="296" y="0.0" width="79" height="40"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="79" id="3FL-x0-Q5a"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Log out">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logOut:" destination="8Cd-Vd-r7a" eventType="touchUpInside" id="aDE-qX-kSW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Ygm-8L-1Sb" firstAttribute="leading" secondItem="skz-Lc-x7p" secondAttribute="leading" constant="296" id="Kxb-Lw-RKd"/>
+                                    <constraint firstItem="Ygm-8L-1Sb" firstAttribute="top" secondItem="skz-Lc-x7p" secondAttribute="top" id="PfK-RF-X4J"/>
                                     <constraint firstAttribute="height" constant="40" id="gS5-lJ-oWj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ygm-8L-1Sb" secondAttribute="bottom" id="xgG-0k-cPN"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ygm-8L-1Sb" secondAttribute="trailing" id="yhW-wp-HDz"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CgH-kl-Zq8">
